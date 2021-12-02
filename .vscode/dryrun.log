@@ -1,0 +1,6 @@
+make all --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/takenzz/xv6-labs-2020'
+make: Leaving directory '/home/takenzz/xv6-labs-2020'
+ 
+make: *** No rule to make target 'all'.
+ 
