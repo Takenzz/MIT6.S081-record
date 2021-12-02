@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Dec  2 20:03:51 2021
+# Make data base, printed on Thu Dec  2 20:08:46 2021
 
 # Variables
 
@@ -151,7 +151,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 67510
+GIO_LAUNCHED_DESKTOP_FILE_PID = 68265
 # automatic
 %F = $(notdir $%)
 # environment
@@ -229,7 +229,7 @@ TOOLPREFIX := riscv64-linux-gnu-
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-37a41378-8f6d-4a5b-9d16-b123362b0e8a.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-21d68762-5851-44e7-be96-f6843e9c549a.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -279,7 +279,6 @@ QEMUOPTS = -machine virt -bios none -kernel $K/kernel -m 128M -smp $(CPUS) -nogr
 # 'override' directive
 .SHELLSTATUS := 0
 # default
- 
 MAKEFILES := 
 # environment
 SNAP_COOKIE = Zz9JzbshwtJOHwL10GmwTxb1jT38sM-b0JmMSG_HBxiJ31jyLVx6
@@ -296,6 +295,7 @@ LC_ALL = C
 # environment
 QT4_IM_MODULE = fcitx
 # automatic
+ 
 ^F = $(notdir $^)
 # makefile (from 'Makefile', line 67)
 OBJCOPY = $(TOOLPREFIX)objcopy
@@ -316,7 +316,7 @@ WINDOWPATH = 2
 # environment
 LANG = C
 # environment
-VSCODE_PID = 67562
+VSCODE_PID = 68314
 # variable set hash-table stats:
 # Load=152/1024=15%, Rehash=0, Collisions=35/431=8%
 
@@ -580,7 +580,6 @@ handin-check:
 		read -p "You are not on the $(LAB) branch.  Hand-in the current branch? [y/N] " r; \
 		test "$$r" = y; \
 	fi
- 
 	@if ! git diff-files --quiet || ! git diff-index --quiet --cached HEAD; then \
 		git status -s; \
 		echo; \
@@ -602,6 +601,7 @@ user/echo.c:
 user/usys.S: user/usys.pl
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 115):
 	perl $U/usys.pl > $U/usys.S
@@ -873,7 +873,6 @@ user/pingpong.d:
 #  Implicit rule search has been done.
 #  Last modified 2021-12-02 19:03:23.372009001
 #  File has been updated.
- 
 #  Successfully updated.
 
 # Not a target:
@@ -885,6 +884,7 @@ kernel/fs.c:
 # Not a target:
 kernel/sysfile.d:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2021-12-02 19:03:20.94805644
 #  File has been updated.
 #  Successfully updated.
@@ -1155,7 +1155,6 @@ conf/lab.mk:
 # Not a target:
 user/stressfs.d:
 #  Implicit rule search has been done.
- 
 #  Last modified 2021-12-02 19:03:22.800020163
 #  File has been updated.
 #  Successfully updated.
@@ -1174,6 +1173,7 @@ kernel/file.o: kernel/file.c kernel/types.h kernel/riscv.h kernel/defs.h kernel/
 # Not a target:
 user/ulib.d:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2021-12-02 19:03:22.184032206
 #  File has been updated.
 #  Successfully updated.
@@ -1455,7 +1455,6 @@ user/zombie.c:
 #  File has not been updated.
 
 kernel/trap.o: kernel/trap.c kernel/types.h kernel/param.h kernel/memlayout.h kernel/riscv.h kernel/spinlock.h kernel/proc.h kernel/defs.h
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1485,6 +1484,7 @@ myapi.key:
 # Not a target:
 user/cat.d:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2021-12-02 19:03:22.300029939
 #  File has been updated.
 #  Successfully updated.
@@ -1757,7 +1757,6 @@ user/_grind:
 kernel/main.o: kernel/main.c kernel/types.h kernel/param.h kernel/memlayout.h kernel/riscv.h kernel/defs.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -1771,6 +1770,7 @@ kernel/string.c:
 # VPATH Search Paths
 
 # No 'vpath' search paths.
+ 
 
 # No general ('VPATH' variable) search path.
 
@@ -1780,6 +1780,6 @@ kernel/string.c:
 # strcache performance: lookups = 961 / hit rate = 49%
 # hash-table stats:
 # Load=483/8192=6%, Rehash=0, Collisions=48/961=5%
-# Finished Make data base on Thu Dec  2 20:03:51 2021
+# Finished Make data base on Thu Dec  2 20:08:46 2021
 
  
