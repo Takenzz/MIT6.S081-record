@@ -55,6 +55,6 @@ int main(int argc, char *argv[])
 {
 
     find(argv[1],argv[2]);
-
+    exit(0) ;
 }
 
