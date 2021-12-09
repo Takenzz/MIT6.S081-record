@@ -23,12 +23,14 @@ struct {
   struct run *freelist;
 } kmem;
 
+
 void
 kinit()
 {
   initlock(&kmem.lock, "kmem");
   freerange(end, (void*)PHYSTOP);
 }
+
 
 void
 freerange(void *pa_start, void *pa_end)
