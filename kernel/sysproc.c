@@ -43,12 +43,35 @@ sys_sbrk(void)
 {
   int addr;
   int n;
+  pagetable_t page_table = myproc()->pagetable ;
+  pagetable_t page_kernel = myproc()->KernelPage ;
+  pte_t *p1;
+  pte_t *p2;
 
   if(argint(0, &n) < 0)
     return -1;
   addr = myproc()->sz;
+
+  if( (addr + n) >= PLIC) {
+    return -1 ;
+    }
+
   if(growproc(n) < 0)
     return -1;
+
+  if( n > 0){
+    for(int i = addr  ; i < addr+n ; i += PGSIZE){
+        p1 = walk(page_table,i,0);
+        p2 = walk(page_kernel,i,1);
+        *p2 = (*p1) & ~PTE_U; 
+    }
+  }else{
+      for(int i = addr - PGSIZE ; i >= addr + n ; i -= PGSIZE)
+              uvmunmap(page_kernel,i,1,0) ;
+  }
+  
+  
+  
   return addr;
 }
 

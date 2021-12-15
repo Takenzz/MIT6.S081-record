@@ -64,6 +64,9 @@ exec(char *path, char **argv)
   p = myproc();
   uint64 oldsz = p->sz;
 
+  if(oldsz >= PLIC )
+     goto bad ;
+
   // Allocate two pages at the next page boundary.
   // Use the second as the user stack.
   sz = PGROUNDUP(sz);
@@ -116,8 +119,10 @@ exec(char *path, char **argv)
   p->trapframe->sp = sp; // initial stack pointer
   proc_freepagetable(oldpagetable, oldsz);
 
-  if(p->pid == 1) vmprint(p->pagetable,1) ;
+  uvmunmap(p->KernelPage,0,PGROUNDUP(oldsz)/PGSIZE,0) ;
+  uvm2kvm(p->pagetable,p->KernelPage,p->sz) ;
 
+  if(p->pid == 1) vmprint(p->pagetable,1) ;
 
 
   return argc; // this ends up in a0, the first argument to main(argc, argv)
