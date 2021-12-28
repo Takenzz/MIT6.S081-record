@@ -126,6 +126,13 @@ found:
   memset(&p->context, 0, sizeof(p->context));
   p->context.ra = (uint64)forkret;
   p->context.sp = p->kstack + PGSIZE;
+  
+  p->pre_ticks =  0 ;
+  p->ticks = 0 ;
+  p->handler  = 0;
+  p->pre_trapframe = (struct trapframe*)kalloc();
+  p->alarm_status = 0;
+
 
   return p;
 }
@@ -149,6 +156,7 @@ freeproc(struct proc *p)
   p->chan = 0;
   p->killed = 0;
   p->xstate = 0;
+  kfree((struct trapframe*)p->pre_trapframe) ;
   p->state = UNUSED;
 }
 
